@@ -1,32 +1,29 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <algorithm>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
+{
+    int colors[4];
+    for (int i = 0; i < 4; ++i)
+    {
+        cin >> colors[i];
+    }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    sort(colors, colors + 4);
 
-# Fortran module files
-*.mod
-*.smod
+    int b = 0;
+    for (int i = 1; i < 4; ++i)
+    {
+        if (colors[i] == colors[i - 1])
+        {
+            b++;
+        }
+    }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    cout << b << endl;
 
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
+
